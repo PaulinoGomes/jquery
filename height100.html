@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta content="charset=iso-8859-1" />
+<title>Rodape fixo no fim da página</title>
+<style type="text/css" media="all">
+html, body {height:100%;} 
+body {
+	margin:0; 
+	padding:0;
+	background:green;
+	}
+#tudo { 
+	width:100%;
+	position:relative;  /*Contexto de posicionamento */
+	margin:0 auto;
+	text-align:left;
+	min-height:100%;/**/
+	}
+ * html #tudo {height: 100%;}
+#conteudo{
+	width:760px;
+	margin:0 auto;
+	
+}
+#principal {
+	width:510px;
+	padding-left:20px;
+	float:left;
+
+	background:yellow;
+	}
+#auxiliar {
+	width:200px;
+	float:right;
+
+	background:red;
+	}
+#rodape {
+	background:#b0f1b0;
+	width:100%;
+	height:20px;
+	position: absolute;
+	bottom: 0; 
+	border:dotted #999;
+	border-width: 1px 0;
+	text-align:center;
+	}
+#rodape p {
+	margin:0;
+	font-weight:bold;
+	color:#060;
+	}
+.clear20{
+	height:20px;/*altura do rodape*/
+	width:100%;
+}
+.clear {clear:both;}
+
+</style>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+$(window).load(function(){
+	//pega altura total da tela do usuário e seta na div
+	$("#principal").css('height', $(document).height());
+	//pega a altura da div da esquerda e seta na da direita
+	$("#auxiliar").css('height',$("#principal").height());
+});
+</script>
+</head>
+<body>
+<div id="tudo">
+<div id="conteudo">
+	<div id="principal">
+		<div id="topo">
+		  <h1>Topo</h1>
+		</div>
+		<h2>Coluna principal</h2>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi eleifend, purus quis laoreet faucibus, ante augue malesuada mi, id rhoncus augue lorem eget elit. Ut sollicitudin sodales purus. Phasellus libero felis, blandit nec, commodo ut, imperdiet ut, nibh. Suspendisse potenti. Donec ullamcorper cursus dolor. Duis vitae ipsum.</p>
+		<p>Maecenas dapibus hendrerit diam. Morbi varius, massa id pretium accumsan, nunc lorem congue libero, ut euismod metus libero id nulla. Duis posuere odio sed velit vulputate venenatis. Suspendisse et dui ac metus auctor fringilla. Curabitur interdum augue a pede.</p>
+		
+		<div class="clear20"></div>
+	</div> 
+	<!-- Fim da div#principal coluna esquerda -->
+	<div id="auxiliar">
+		<h4>Coluna auxiliar</h4>
+		<ul id="nav">
+			<li class="um"><a href="#">Voltar</a></li>
+		</ul>
+	</div> 
+	<!-- Fim da div#auxiliar coluna direita -->
+	<div class="clear"></div>
+<!-- Fim da div#conteudo -->
+</div>
+<div id="rodape">
+  <p>Rodap&eacute;</p>
+</div>
+</div> 
+<!-- Fim da div#tudo -->
+</body>
+</html>
